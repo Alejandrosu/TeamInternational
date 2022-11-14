@@ -52,7 +52,7 @@ it('Verify labels in the Your Industry section', () => {
   
 })
 
-it('Verifies the hover fucntion in the Your Industry section', () => {
+it('Verifies the hover function in the Your Industry section', () => {
 
   //The webpage is accessed
 
@@ -64,9 +64,37 @@ it('Verifies the hover fucntion in the Your Industry section', () => {
 
   //Verifying the hover function
 
-  cy.xpath("//h3[contains(text(),'Logistics & Transportation')]").trigger('mouseover')
- 
+  cy.xpath("//h3[contains(text(),'Logistics & Transportation')]").realHover();
+  cy.xpath("//p[contains(text(),'Build your end-to-end digital supply chain to driv')]").should('be.visible')
+  cy.xpath("//h3[contains(text(),'Oil & Gas')]").realHover();
+  cy.xpath("//p[contains(text(),'Harness digital solutions and data to accelerate p')]").should('be.visible')
+  cy.xpath("//h3[contains(text(),'Telecom')]").realHover();
+  cy.xpath("//p[contains(text(),'Empower your organization to quickly and effective')]").should('be.visible')
+  cy.xpath("//h3[contains(text(),'Technology ')]").realHover();
+  cy.xpath("//p[contains(text(),'Bring your transformational innovations to life an')]").should('be.visible')
+  cy.xpath("//h3[contains(text(),'Financial ')]").realHover();
+  cy.xpath("//p[contains(text(),'Adapt more quickly to evolving competitive threats')]").should('be.visible')
+  cy.xpath("//h3[contains(text(),'Healthcare ')]").realHover();
+  cy.xpath("//p[contains(text(),'Accelerate the creation and delivery of your life-')]").should('be.visible')
+  cy.xpath("//h3[contains(text(),'Travel ')]").realHover();
+  cy.xpath("//p[contains(text(),'Leverage our intelligent IT and software solutions')]").should('be.visible')
+  cy.xpath("//h3[contains(text(),'Retail ')]").realHover();
+  cy.xpath("//p[contains(text(),'Harness innovative IT solutions and data to build ')]").should('be.visible')
+  cy.xpath("//h3[contains(text(),'Digital ')]").realHover();
+  cy.xpath("//p[contains(text(),'Accelerate lead generation with innovative, data-d')]").should('be.visible')
   
+})
+
+it('Verifies the click action for every element in the Your Industry section', () => {
+
+  //The webpage is accessed
+
+  cy.visit('https://www.teaminternational.com')
+
+  //Click action verified for each element
+
+  
+ 
 })
 
 })
