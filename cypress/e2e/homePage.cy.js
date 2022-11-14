@@ -93,8 +93,69 @@ it('Verifies the click action for every element in the Your Industry section', (
 
   //Click action verified for each element
 
-  
- 
+  cy.xpath("//a[@href='http://www.teaminternational.com/industries/logistics-transportation/']")
+    .then((link) => {
+      cy.request(link.prop('href'))
+        .its('status')
+        .should('eq', 200)
+    })
+
+  cy.xpath("//a[@href='https://www.teaminternational.com/industries/oil-gas/']")
+    .then((link) => {
+      cy.request(link.prop('href'))
+        .its('status')
+        .should('eq', 200)
+    })
+
+  cy.xpath("//a[@href='https://www.teaminternational.com/industries/it-solutions-for-telecom-industry/']")
+    .then((link) => {
+      cy.request(link.prop('href'))
+        .its('status')
+        .should('eq', 200)
+    })
+
+  cy.xpath("//a[@href='https://www.teaminternational.com/industries/information-technology-teams/']")
+    .then((link) => {
+      cy.request(link.prop('href'))
+        .its('status')
+        .should('eq', 200)
+    })
+
+  cy.xpath("//a[@href='https://www.teaminternational.com/industries/financial-services/']")
+    .then((link) => {
+      cy.request(link.prop('href'))
+        .its('status')
+        .should('eq', 200)
+    })
+
+  cy.xpath("//a[@href='https://www.teaminternational.com/industries/healthcare-life-sciences/']")
+    .then((link) => {
+      cy.request(link.prop('href'))
+        .its('status')
+        .should('eq', 200)
+    })
+
+  cy.xpath("//a[@href='https://www.teaminternational.com/industries/it-hospitality-solutions/']")
+    .then((link) => {
+      cy.request(link.prop('href'))
+        .its('status')
+        .should('eq', 200)
+    })
+
+  cy.xpath("//a[@href='https://www.teaminternational.com/industries/retail-it-solutions/']")
+    .then((link) => {
+      cy.request(link.prop('href'))
+        .its('status')
+        .should('eq', 200)
+    })
+
+    cy.xpath("//a[@href='https://www.teaminternational.com/industries/digital-marketing/']")
+    .then((link) => {
+      cy.request(link.prop('href'))
+        .its('status')
+        .should('eq', 200)
+    })
+
 })
 
 })
