@@ -22,12 +22,12 @@ it('Verifies that the user is able to scroll through the website', () => {
 
   //Scrolling down through the website
 
-  cy.xpath("//h2[normalize-space()='Innovative IT Software Services']").scrollIntoView()
-  cy.xpath("//h2[normalize-space()='They trust us']").scrollIntoView()
-  cy.xpath("//h2[normalize-space()='Locations']").scrollIntoView()
-  cy.xpath("//h2[normalize-space()='Top Gun Lab']").scrollIntoView()
-  cy.xpath("//h2[normalize-space()='Empower Your Career']").scrollIntoView()
-  cy.xpath("//h2[normalize-space()='Empower Your Career']").scrollIntoView()
+  cy.xpath("//h2[normalize-space()='Innovative IT Software Services']").scrollIntoView().should('be.visible')
+  cy.xpath("//h2[normalize-space()='They trust us']").scrollIntoView().should('be.visible')
+  cy.xpath("//h2[normalize-space()='Locations']").scrollIntoView().should('be.visible')
+  cy.xpath("//h2[normalize-space()='Top Gun Lab']").scrollIntoView().should('be.visible')
+  cy.xpath("//h2[normalize-space()='Empower Your Career']").scrollIntoView().should('be.visible')
+  cy.xpath("//h2[normalize-space()='Empower Your Career']").scrollIntoView().should('be.visible')
 
   
 })
@@ -52,11 +52,20 @@ it('Verify labels in the Your Industry section', () => {
   
 })
 
-it('Verify labels in the Your Industry section', () => {
+it('Verifies the hover fucntion in the Your Industry section', () => {
 
   //The webpage is accessed
 
-  cy.visit('https://www.teaminternational.com') 
+  cy.visit('https://www.teaminternational.com')
+  
+  //Scroll into the top of the page so that the element is visible
+
+  cy.xpath("//h1[@class='main-title-industry white-text']").scrollIntoView()
+
+  //Verifying the hover function
+
+  cy.xpath("//h3[contains(text(),'Logistics & Transportation')]").trigger('mouseover')
+ 
   
 })
 
