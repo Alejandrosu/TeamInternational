@@ -287,4 +287,24 @@ describe('Team International', () => {
 
   })
 
+  it('Verifies that the logos in the They trust us section have an event when hovered', () => {
+
+    //The webpage is accessed
+
+    cy.visit('https://www.teaminternational.com')
+
+    //Verify the on hover event of the They trust us elements shows the appropiate image
+
+    cy.xpath("//div[@id='logo-partners-2']//img[@alt='test 4']")
+      .should('have.attr', 'src')
+      .and('equal', "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E")
+      
+      cy.xpath("//div[@id='logo-partners-2']//img[@alt='test 4']")
+      .realHover()
+      .should('have.attr',  'src')
+      .and('equal', "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E")
+  })
+
+  
+
 })
