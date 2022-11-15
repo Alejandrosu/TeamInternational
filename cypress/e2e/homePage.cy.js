@@ -1,7 +1,7 @@
 ///<reference types="cypress-iframe" />
 import 'cypress-iframe'
 
-Cypress.on('uncaught:exception', (err, runnable) => {
+Cypress.on('uncaught:exception', (err, run  nable) => {
   // returning false here prevents Cypress from
   // failing the test
   return false
@@ -60,10 +60,6 @@ describe('Team International', () => {
     //The webpage is accessed
 
     cy.visit('https://www.teaminternational.com')
-  
-    //Scroll into the top of the page so that the element is visible
-
-    cy.xpath("//h1[@class='main-title-industry white-text']").scrollIntoView()
 
     //Verifying the hover function
 
