@@ -158,7 +158,7 @@ describe('Team International', () => {
 
   })
 
-  it('Verifies that the user is able to access the website', () => {
+  it('Verifies the labels for the Innovative IT Software Services section', () => {
 
     //The webpage is accessed
 
@@ -228,6 +228,63 @@ describe('Team International', () => {
 
   })
 
-  
+  it('Verifies the click action for every element in the Innovative IT Software Services section', () => {
+
+    //The webpage is accessed
+
+    cy.visit('https://www.teaminternational.com')
+
+    //Verify the click action in the Innovative IT Software Services section
+
+    cy.xpath("//a[@href='https://www.teaminternational.com/services/software-development-outsourcing/']")
+    .then((link) => {
+      cy.request(link.prop('href'))
+        .its('status')
+        .should('eq', 200)
+    })
+
+    cy.xpath("//a[@href='https://www.teaminternational.com/services/intelligent-automation-services-rpa/']")
+    .then((link) => {
+      cy.request(link.prop('href'))
+        .its('status')
+        .should('eq', 200)
+    })
+
+    cy.xpath("//a[@href='https://www.teaminternational.com/services/software-qa-testing/']")
+    .then((link) => {
+      cy.request(link.prop('href'))
+        .its('status')
+        .should('eq', 200)
+    })
+
+    cy.xpath("//a[@href='https://www.teaminternational.com/services/microsoft-services/']")
+    .then((link) => {
+      cy.request(link.prop('href'))
+        .its('status')
+        .should('eq', 200)
+    })
+
+    cy.xpath("//a[@href='https://www.teaminternational.com/services/professional-it-consulting-services/']")
+    .then((link) => {
+      cy.request(link.prop('href'))
+        .its('status')
+        .should('eq', 200)
+    })
+
+    cy.xpath("//a[@href='https://www.teaminternational.com/services/data-analytics-services/']")
+    .then((link) => {
+      cy.request(link.prop('href'))
+        .its('status')
+        .should('eq', 200)
+    })
+
+    cy.xpath("//a[@href='https://www.teaminternational.com/services/managed-it-services/']")
+    .then((link) => {
+      cy.request(link.prop('href'))
+        .its('status')
+        .should('eq', 200)
+    })
+
+  })
 
 })
