@@ -1,3 +1,6 @@
+///<reference types="cypress-iframe" />
+import 'cypress-iframe'
+
 Cypress.on('uncaught:exception', (err, runnable) => {
   // returning false here prevents Cypress from
   // failing the test
@@ -25,9 +28,9 @@ describe('Team International', () => {
     cy.xpath("//h2[normalize-space()='Innovative IT Software Services']").scrollIntoView().should('be.visible')
     cy.xpath("//h2[normalize-space()='They trust us']").scrollIntoView().should('be.visible')
     cy.xpath("//h2[normalize-space()='Locations']").scrollIntoView().should('be.visible')
-     cy.xpath("//h2[normalize-space()='Top Gun Lab']").scrollIntoView().should('be.visible')
+    cy.xpath("//h2[normalize-space()='Top Gun Lab']").scrollIntoView().should('be.visible')
     cy.xpath("//h2[normalize-space()='Empower Your Career']").scrollIntoView().should('be.visible')
-    cy.xpath("//h2[normalize-space()='Empower Your Career']").scrollIntoView().should('be.visible')
+    cy.xpath("//h2[normalize-space()='Empower Your Career']").scrollIntoView({ offset: { top: 300, left: 0 } })
 
   
   })
@@ -305,6 +308,39 @@ describe('Team International', () => {
       .and('equal', "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E")
   })
 
-  
+  it('Test that users are able to login with a valid username and password', () => {
+
+    //The webpage is accessed
+
+    cy.visit('https://practicetestautomation.com/practice-test-login/')
+
+    //Login
+
+    cy.get('#username').type('student')
+    cy.get('#password').type('Password123')
+    cy.get('#submit').click()
+
+    //Validates login
+
+    cy.xpath("//h1[@class='post-title']").contains("Logged In Successfully")
+
+    /*Of course, we would only do this type of login to validate its functionality, but if we have to
+    login constantly, we would be doing so by requests, ex:
+
+        const login = (path) => {
+      cy.visit(`http://localhost:9000${path}`)
+        .get('#username')
+        .type('student')
+        .get('#password')
+        .type('Password123');
+      cy.get('#submit').click();
+      cy.intercept({ method: 'POST', url: 'api/login' }).as('login');
+      cy.wait('@login', { timeout: 10000 });
+      cy.wait(100);
+    };
+
+    */
+
+  })
 
 })
