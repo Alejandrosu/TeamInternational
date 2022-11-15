@@ -158,4 +158,32 @@ it('Verifies the click action for every element in the Your Industry section', (
 
 })
 
+it('Verifies that the user is able to access the website', () => {
+
+  //The webpage is accessed
+
+  cy.visit('https://www.teaminternational.com')
+
+  //Verifying each label for the Innovative IT Software Services section
+
+  cy.xpath("//div[@class='service-item col-6 col-sm-4 col-md-4 col-xl-3'][1]")
+    .contains('Software Development Outsourcing')
+  cy.xpath("//div[@class='service-item col-6 col-sm-4 col-md-4 col-xl-3'][2]")
+    .contains('AutomationServices')
+  cy.xpath("//div[@class='service-item col-6 col-sm-4 col-md-4 col-xl-3'][3]")
+    .contains('Software QA& Testing')
+  cy.xpath("//div[@class='service-item col-6 col-sm-4 col-md-4 col-xl-3'][4]")
+    .contains('MicrosoftServices')
+  cy.xpath("//div[@class='service-item col-6 col-sm-4 col-md-4 col-xl-3'][5]")
+    .contains('Professional ITConsulting')
+  cy.xpath("//div[@class='service-item col-6 col-sm-4 col-md-4 col-xl-3'][6]")
+    .contains('DataAnalytics Services')  
+  cy.xpath("//div[@class='service-item col-6 col-sm-4 col-md-4 col-xl-3'][7]")
+    .contains('Managed ITServices')
+  
+          
+
+
+})
+
 })
