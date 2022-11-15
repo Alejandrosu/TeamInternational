@@ -10,6 +10,8 @@ Have [node.js](https://nodejs.org/en/download/) installed.
 git clone https://github.com/Alejandrosu/TeamInternational.git
 ```
 
+Doing it through visual code is very easy and tidy as well. ;)
+
 **Install dependencies**
 ```
 npm install
