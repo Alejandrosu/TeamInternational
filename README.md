@@ -19,3 +19,5 @@ npm install
 `npx cypress run` runs headless tests
 
 `npx cypress run --reporter dot` runs headless tests with dot reporter
+
+`npx cypress open` to open and run browser tests
